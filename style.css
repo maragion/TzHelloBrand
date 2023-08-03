@@ -397,7 +397,7 @@ hr {
 }
 
 .about-us {
-    margin-top: 7.813rem;
+    margin-top: 5.625rem;
     padding: 6.313rem 0;
 }
 
@@ -634,6 +634,9 @@ form .button {
         margin-left: 0;
     }
 
+    .about-us {
+        margin-top: 0;
+    }
 }
 
 
@@ -769,11 +772,30 @@ form .button {
     }
 
     .slider-photo {
+        overflow: hidden;
+        padding: 1.25rem;
+        background: linear-gradient(
+                to bottom,
+                #3A4574,
+                #3A4574 85%,
+                white 15%,
+                white
+        );
+    }
+
+    .swiper2-buttons {
         display: none;
     }
 
+    .swiper-slide img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
     .about-us {
-        margin-top: 0;
+        margin-top:3.125rem;
         padding: 1.875rem 1.25rem 5rem;
     }
 
