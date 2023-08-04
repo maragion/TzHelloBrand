@@ -40,7 +40,7 @@ let swiper2 = new Swiper(".mySwiper2", {
 
 // form
 
-document.addEventListener("DOMContentLoaded", function (){
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("formModal");
 
     const close = document.getElementById("close")
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function (){
 
         if (error === 0) {
             form.classList.add("sending");
-            let response = await fetch("https://dummyjson.com/users/add", {
+            let response = await fetch("https://handsome-ruby-pinafore.cyclic.app/requests", {
                 method: "Post",
                 body: JSON.stringify(
                     {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function (){
                 headers: {"Content-Type": "application/json"}
 
             })
-            if (response.ok){
+            if (response.ok) {
                 console.log(name, email, request);
 
                 let result = await response.json();
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function (){
                 form.classList.remove("sending")
                 close.click()
                 myModal2.open("#myModal2")
-            }else {
+            } else {
                 alert("Ошибка")
                 form.classList.remove("sending")
 
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function (){
 
 
     function formValidate(form) {
-        let error= 0;
+        let error = 0;
         let formReq = document.querySelectorAll('._req');
 
         for (let i = 0; i < formReq.length; i++) {
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function (){
                     addError(input);
                     error++
                 }
-            }else {
+            } else {
                 if (input.value === '') {
                     addError(input);
                     error++;
@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function (){
         input.parentElement.classList.add('_error');
         input.classList.add('_error');
     }
+
     function removeError(input) {
         input.parentElement.classList.remove('_error');
         input.classList.remove('_error');
